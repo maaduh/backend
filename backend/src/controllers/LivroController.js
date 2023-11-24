@@ -9,17 +9,18 @@ module.exports = {
     
 
     async create(request, response){
-        const{title, notes, priority} = request.body;
+        const{isbn, autor, titulo, usuario} = request.body;
 
-        if(!notes || !title)
+        if(!autor || !titulo)
         {
-            return response.status(400).json({ error: "Necessário um título/Anotação!"});
+            return response.status(400).json({ error: "Necessário um título/autor!"});
         }
 
         const annotationCreated = await Annotations.create({
-            title,
-            notes,
-            priority
+            isbn,
+            autor,
+            titulo,
+            usuario
         });
 
         return response.json(annotationCreated);
