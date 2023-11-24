@@ -1,15 +1,15 @@
 const express = require('express');
 const routes = express.Router();
 
-const AnnotationController = require('./controllers/AnnotationController');
 const PriorityController = require('./controllers/PriorityController');
 const ContentControler = require('./controllers/ContentControler');
+const LivroController = require('./controllers/LivroController');
 
 
 //rota annotations
-routes.post('/annotations', AnnotationController.create);
-routes.get('/annotations', AnnotationController.read);
-routes.delete('/annotations/:id',AnnotationController.delete);
+routes.post('/annotations', LivroController.create);
+routes.get('/annotations', LivroController.read);
+routes.delete('/annotations/:id',LivroController.delete);
 
 //rota priority
 routes.get('/priorities', PriorityController.read);
